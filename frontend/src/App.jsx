@@ -17,6 +17,8 @@ const App = () => {
     return localStorage.getItem('mediread-theme') || 'light'
   })
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
   useEffect(() => {
     localStorage.setItem('mediread-theme', theme)
   }, [theme])
@@ -27,29 +29,38 @@ const App = () => {
     )
   }
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen((current) => !current)
+  }
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false)
+  }
+
   return (
     <BrowserRouter>
       <div className={`app-container ${theme}-theme`}>
-
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <Navbar
+          theme={theme}
+          toggleTheme={toggleTheme}
+          toggleSidebar={toggleSidebar}
+        />
 
         <div className="main-layout">
-
-          <Sidebar />
+          <Sidebar
+            isOpen={isSidebarOpen}
+            onClose={closeSidebar}
+          />
 
           <div className="page-content">
-
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/upload" element={<UploadPrescription />} />
               <Route path="/history" element={<PrescriptionHistory />} />
               <Route path="/chat" element={<AIAssistant />} />
             </Routes>
-
           </div>
-
         </div>
-
       </div>
     </BrowserRouter>
   )

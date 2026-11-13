@@ -1,14 +1,21 @@
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = ({ theme, toggleTheme, toggleSidebar }) => {
   return (
     <nav className="navbar">
 
       <div className="navbar-left">
+        <button
+          className="hamburger-btn"
+          onClick={toggleSidebar}
+          aria-label="Open navigation menu"
+        >
+          ☰
+        </button>
+
         <h2>MediRead <span>AI</span></h2>
       </div>
 
       <div className="navbar-right">
-
         <button
           className="theme-toggle"
           onClick={toggleTheme}
@@ -24,7 +31,6 @@ const Navbar = ({ theme, toggleTheme }) => {
           <div className="profile-avatar">U</div>
           <span>User</span>
         </div>
-
       </div>
 
     </nav>
