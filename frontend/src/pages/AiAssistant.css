@@ -1,0 +1,128 @@
+
+.chat-page {
+  padding: 35px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.chat-page h1 {
+  color: #172b4d;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.chat-page > p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.chat-container {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  max-width: 950px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #f8fafc;
+}
+
+.chat-message {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.chat-message.ai {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 3px;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: #15803d;
+  color: #ffffff;
+  border-bottom-right-radius: 3px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.chat-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input input:focus {
+  border-color: #15803d;
+}
+
+.chat-input button {
+  background: #15803d;
+  color: #ffffff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background: #166534;
+}
+
+@media (max-width: 600px) {
+  .chat-page {
+    padding: 20px 15px;
+  }
+
+  .chat-container {
+    height: 500px;
+  }
+
+  .chat-messages {
+    padding: 15px;
+  }
+
+  .chat-message {
+    max-width: 90%;
+  }
+
+  .chat-input {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .chat-input button {
+    padding: 10px 15px;
+  }
+}
